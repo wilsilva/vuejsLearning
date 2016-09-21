@@ -38,7 +38,13 @@ router.map({
 
 	'contato':{
 		component: contato
-	}
+	},
+
+	'*': {
+	    component: {
+	      template: "Página Não Encontrada!"
+	    }
+	},
 	
 })
 

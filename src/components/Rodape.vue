@@ -1,13 +1,16 @@
 <style lang="sass">
 	.rodape{
 		width: 100%;
-		height: 100px;
-		bottom: 0;
-		position: absolute;
+		height: 0px;
+		padding-bottom: 20%;		
 		background-color: #E1E1E1;
+		
 
 		p{
-			text-align:center;
+			&:nth-child(1){
+				padding-top: 10%;
+			}
+			text-align:center;			
 		}
 	}
 </style>
