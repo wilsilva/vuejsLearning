@@ -9,7 +9,7 @@ import portfolio from "./pages/portfolio.vue"
 import servicos from "./pages/servicos.vue"
 import contato from "./pages/contato.vue"
 
-import './styles.css'
+import './sass/styles.scss'
 
 Vue.config.debug = process.env.NODE_ENV !== 'production'
 

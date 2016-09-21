@@ -1,10 +1,5 @@
-<style lang="sass">
-    html{
-        font-size: 15px;
-    }
-    body{
-      padding: 0% !important;
-    }
+<style lang="sass">    
+    
 </style>
 <template>
   <div class="main">

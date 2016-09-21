@@ -24,11 +24,7 @@
 			height: 150px;
 			display: block;
 			margin-bottom: 1%;			
-		}
-		button{
-			width: 10%;
-			height: 30px;
-		}
+		}		
 	}
 </style>
 <template>
@@ -37,7 +33,7 @@
 	<div class="formulario-blog">
 		<input type="text" placeholder="Titulo" v-model="titulo">
 		<textarea placeholder="Conteúdo" v-model="conteudo"></textarea>
-		<button v-on:click="cadastrarConteudo">Cadastrar</button>
+		<button class="btn" v-on:click="cadastrarConteudo">Cadastrar</button>
 	</div>
 	<div class="lista-conteudo">
 		<h3>Conteudos</h3>
