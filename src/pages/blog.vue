@@ -37,30 +37,23 @@
 	</div>
 	<div class="lista-conteudo">
 		<h3>Conteudos</h3>
-		<table border="1">
-			<thead>
-				<th>Titulo</th>
-				<th>Conteudo</th>
-			</thead>
-			<tbody>
-				<tr v-for="conteudo in conteudos">
-					<td>{{ conteudo.titulo }}</td>
-					<td>{{ conteudo.conteudo }}</td>
-					<td><button v-on:click="removeConteudo($index)">X</button></td>
-				</tr>
-			</tbody>
-		</table>
+		<input type="text" v-model="pesquisa">
+		<custom-table :columns="colunas" :data="conteudos" :filter="pesquisa"></custom-table>
 	</div>
 </template>
 
 <script> 
+import CustomTable from "../components/CustomTable.vue"
+
   export default {
     replace: false,
   	data() {
       return {
+      	pesquisa: '',
       	titulo: '',
       	conteudo: '',
         conteudos: [],
+        colunas: [ 'titulo','conteudo']
       }
     },
     methods:{
@@ -82,6 +75,9 @@
     	removeConteudo: function(index){
     		this.conteudos.splice(index,1);
     	}
+    },
+    components:{
+    	CustomTable,
     }    
   }
 </script>

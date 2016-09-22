@@ -4,7 +4,8 @@
  		height: 80px;
  		margin-bottom: 2%; 		
  		display:block;
- 		background-color: #E1E1E1; 		
+ 		background-color: #E1E1E1; 	
+    color: #3498db;	
 
     h2{
       width: 30%;
@@ -32,7 +33,6 @@
  	.menu-superior ul li a{ // deixando o menu horizontal
  		padding: 2px 10px;
  		display: inline-block; 		
-
  		color: #3498db;
  		text-decoration: none; 		
  		font-family: Ubuntu Mono;

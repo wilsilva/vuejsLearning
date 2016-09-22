@@ -68,15 +68,18 @@
           <p>{{ post.body }}</p>
       </article>
     </section>
-    <div class="pagination">
+    <!--<div class="pagination">
       <ul>
         <li v-for="pageNumber in totalPages">
           <a href="#" @click="setPage(pageNumber)" :class="{'current-page': currentPage == pageNumber}">{{ pageNumber+1 }}</a>
         </li>
       </ul>
-    </div>  
+    </div> -->
+    <pagination :method="setPage" :total-pages="totalPages" :current-page="currentPage"></pagination>
 </template>
 <script>
+import Pagination from "../components/Pagination.vue"
+
 	export default {
     
     	replace: false,
@@ -113,7 +116,7 @@
         }
       },
 	    components:{
-	    	      
+	       Pagination,
 	    },
       filters:{
         paginate(list){        
