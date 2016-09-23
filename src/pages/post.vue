@@ -3,6 +3,9 @@
   .post-unique{
     width:100%;
     display: block;        
+    font-family: Ubuntu Mono;
+    margin: 5% 5%;
+    text-align: justify;    
         
     h2{
       font-size: 1.5rem;
@@ -26,7 +29,7 @@
 </template>
 
 <script>
-
+import Post from '../services/Post.service.js';
 	export default {
     
    	replace: false,
@@ -44,15 +47,11 @@
     methods:{
         
       getPost(){
-          
-        this.$http.get('http://jsonplaceholder.typicode.com/posts/' + this.$route.params.id).then((successResponse) => {              
-          
+        let post = new Post();  
+        post.post(this.$route.params.id).then((successResponse) => {                        
           this.$set('post',successResponse.body);              
-
-        }, (errorResponse) => {
-
+        },(errorResponse) => {
           console.error(errorResponse);
-
         });
       }
 

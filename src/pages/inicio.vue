@@ -79,6 +79,7 @@
 </template>
 <script>
 import Pagination from "../components/Pagination.vue"
+import Post from "../services/Post.service.js"
 
 	export default {
     
@@ -95,17 +96,20 @@ import Pagination from "../components/Pagination.vue"
 	      }
 	    },
 
-      ready(){
-        this.getPosts();        
+      ready(){        
+        this.getPosts();
       },
       methods:{
         getPosts(){
-          this.$http.get('http://jsonplaceholder.typicode.com/posts').then((successResponse) => {              
+          
+          let post = new Post();
+          post.posts().then((successResponse) => {              
               this.$set('posts',successResponse.body);              
-          }, (errorResponse) => {
+          }).catch((errorResponse) => {
               console.error(errorResponse);
-          })
-        },
+          });
+
+        },        
         setPage(pageNumber){
           this.currentPage = pageNumber;
         }
